@@ -1,4 +1,4 @@
-let getCityWeather = (async function () {
+let getCityWeather = (function () {
     let citySearch = document.querySelector("input#city").value;
     console.log(citySearch);
     let searchString='https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'+String(citySearch)+'?key=ZEEUDV8ABPJF7EHVUDAV4RUDM';
@@ -7,7 +7,12 @@ let getCityWeather = (async function () {
     return response;
 });
 
-export {getCityWeather}
+let createCityWeather = (function(response) {
+    let searchData=response.json();
+    return searchData;
+});
+
+export {getCityWeather, createCityWeather}
 
 
 
