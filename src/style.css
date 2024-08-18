@@ -1,4 +1,66 @@
+@font-face {
+    font-family: 'acmeregular';
+    src: url('fonts/acme-regular.woff2') format('woff2'),
+         url('fonts/acme-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'abeezeeitalic';
+    src: url('fonts/abeezee-italic.woff2') format('woff2'),
+         url('fonts/abeezee-italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'abeezeeregular';
+    src: url('fonts/abeezee-regular.woff2') format('woff2'),
+         url('fonts/abeezee-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 img {
     width: 200px;
     height: auto;
 }
+
+.weather-card {
+    border-radius: 10px;
+    background-color: #A09CB0;
+    padding: 10px;
+    font-family: 'abeezeeregular', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, button, label, input, h2, h3 {
+    font-family: 'acmeregular', sans-serif;
+}
+
+button {
+    background-color: #A09CB0;
+}
+
+h1, h2, h3 {
+    margin: 10px;
+}
+
+p {
+    font-family: 'abeezeeitalic', serif;
+}
+
+body {
+    background-color: #ABDAE1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
