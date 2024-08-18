@@ -1,3 +1,5 @@
+import { getWeatherIcon } from './getWeatherIcon.js'
+
 let showWeather = (function(cityWeatherProperties) {
     let weatherCard=document.createElement("div");
     weatherCard.classList.add("weather-card");
@@ -11,9 +13,10 @@ let showWeather = (function(cityWeatherProperties) {
     cityDateTime.textContent=cityWeatherProperties.time;
     weatherCard.appendChild(cityDateTime);
 
-    let cityDescription=document.createElement("h3");
-    cityDescription.textContent=cityWeatherProperties.conditions;
-    weatherCard.appendChild(cityDescription);
+    let cityConditions=document.createElement("h3");
+    cityConditions.textContent=cityWeatherProperties.conditions;
+    weatherCard.appendChild(cityConditions);
+
 
     let cityTemp=document.createElement("h3");
     cityTemp.textContent=cityWeatherProperties.temp+`\u00B0`+`F`;
@@ -22,6 +25,15 @@ let showWeather = (function(cityWeatherProperties) {
     let cityFeelsTemp=document.createElement("h3");
     cityFeelsTemp.textContent=`Feels Like: ${cityWeatherProperties.feelsLikeTemp}`+`\u00B0`+`F`;
     weatherCard.appendChild(cityFeelsTemp);
+
+   
+    //get weather icon
+    let weatherImg=getWeatherIcon(cityWeatherProperties);
+    weatherCard.appendChild(weatherImg);
+   
+    let cityDescription=document.createElement("p");
+    cityDescription.textContent=cityWeatherProperties.description;
+    weatherCard.appendChild(cityDescription);
 
     let humidity=document.createElement("div");
     humidity.classList.add("weather-row");
@@ -55,5 +67,7 @@ let showWeather = (function(cityWeatherProperties) {
 
     return weatherCard;
 });
+
+
 
 export { showWeather };

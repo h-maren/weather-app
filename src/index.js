@@ -13,6 +13,12 @@ searchBtn.addEventListener("click", async () => {
         let currentWeatherProperties = new cityWeatherProperties(searchData);
         console.log(currentWeatherProperties);
         let weatherCard = showWeather(currentWeatherProperties);
+        let checkWeatherCard = body.querySelector(".weather-card");
+        console.log(checkWeatherCard);
+        if(checkWeatherCard!==null){
+            body.removeChild(checkWeatherCard);
+
+        } 
         body.appendChild(weatherCard);
         document.querySelector("input#city").value="";
     } catch (err){
