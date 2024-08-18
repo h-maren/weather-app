@@ -2,9 +2,13 @@ import './style.css';
 import { getCityWeather, createCityWeather } from './getweather';
 import { cityWeatherProperties } from './cityWeatherObj';
 import { showWeather } from './showWeather';
+import { changeTemperatureDegrees } from './changeTemperature';
 
 const searchBtn = document.querySelector(".search-btn");
+const tempConvertBtn = document.querySelector(".degree-btn");
 const body = document.querySelector("body");
+
+
 searchBtn.addEventListener("click", async () => {
     try {
         let response = await getCityWeather();
@@ -15,6 +19,7 @@ searchBtn.addEventListener("click", async () => {
         let weatherCard = showWeather(currentWeatherProperties);
         let checkWeatherCard = body.querySelector(".weather-card");
         console.log(checkWeatherCard);
+        tempConvertBtn.textContent='Change to Celsius';
         if(checkWeatherCard!==null){
             body.removeChild(checkWeatherCard);
 
@@ -25,6 +30,10 @@ searchBtn.addEventListener("click", async () => {
         alert(err);
     }
 });
+
+tempConvertBtn.addEventListener("click", changeTemperatureDegrees);
+
+
 
 
 

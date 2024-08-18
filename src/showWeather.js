@@ -19,10 +19,12 @@ let showWeather = (function(cityWeatherProperties) {
 
 
     let cityTemp=document.createElement("h3");
+    cityTemp.classList.add("current-temp");
     cityTemp.textContent=cityWeatherProperties.temp+`\u00B0`+`F`;
     weatherCard.appendChild(cityTemp);
 
     let cityFeelsTemp=document.createElement("h3");
+    cityFeelsTemp.classList.add("feels-like-temp");
     cityFeelsTemp.textContent=`Feels Like: ${cityWeatherProperties.feelsLikeTemp}`+`\u00B0`+`F`;
     weatherCard.appendChild(cityFeelsTemp);
 
